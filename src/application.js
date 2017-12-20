@@ -1,4 +1,11 @@
-// Application code goes here
+import $ from 'jquery';
+
+$(document).ready(function(){
+  $('button').on('click', function(){
+    game();
+  });
+});
+
 
 function playRound(playerSelection, computerSelection) {
 
@@ -54,5 +61,3 @@ function game() {
   }
 }
 
-game();
- 
