@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import swal from 'sweetalert2';
 
 $(document).ready(function(){
   $('button').on('click', function(){
@@ -6,11 +7,10 @@ $(document).ready(function(){
   });
 });
 
-
 function playRound(playerSelection, computerSelection) {
 
   if(playerSelection === computerSelection) {
-    console.log('The result is a tie! Next round.');
+    console.log('The result is a tie!');
   }
   if(playerSelection === 'rock') {
     if(computerSelection === 'paper') {
@@ -47,6 +47,10 @@ function game() {
     let playerChoice = prompt('What is your choice: rock, paper or scissors?');
     let computerChoice = Math.random();
 
+    if(playerChoice === null) {
+      return;
+    } 
+
     if(computerChoice <= 0.33) {
       computerChoice = 'rock';
     } else if(computerChoice <= 0.67) {
@@ -60,4 +64,3 @@ function game() {
     playRound(playerChoice, computerChoice);
   }
 }
-
