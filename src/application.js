@@ -71,8 +71,7 @@ function game() {
     playRound(playerChoice, computerChoice);
   }
 
-winner(playerScore, computerScore);
-
+  winner(playerScore, computerScore);
 }
 
 function validInput(playerChoice) {
