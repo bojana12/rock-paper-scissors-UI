@@ -21,11 +21,9 @@ function playRound(playerSelection, computerSelection) {
     if(computerSelection === 'paper') {
       console.log('Computer wins! Paper beats rock.');
       computerScore += 1;
-      console.log(computerScore);
     } else {
       console.log('You win! Rock beats scissors.');
       playerScore += 1; 
-      console.log(playerScore);
     }
   }
 
@@ -33,11 +31,9 @@ function playRound(playerSelection, computerSelection) {
     if(computerSelection === 'rock') {
       console.log('You win! Paper beats rock.');
       playerScore += 1;
-      console.log(playerScore);
     } else {
       console.log('Computer wins! Scissors beats paper.');
       computerScore += 1;
-      console.log(computerScore);
     }
   }
 
@@ -45,12 +41,9 @@ function playRound(playerSelection, computerSelection) {
     if(computerSelection === 'paper') {
       console.log('You win! Scissors beats paper.');
       playerScore += 1;
-      console.log(playerScore);
-      
     } else { 
       console.log('Computer wins! Rock beats scissors.');
       computerScore += 1;    
-      console.log(computerScore);
     }
   }
 }
@@ -76,8 +69,10 @@ function game() {
     console.log(`Player choice is: ${playerChoice}`);
     console.log(`Computer choice is: ${computerChoice}`);
     playRound(playerChoice, computerChoice);
-    winner(playerScore, computerScore);
   }
+
+winner(playerScore, computerScore);
+
 }
 
 function validInput(playerChoice) {
@@ -89,9 +84,9 @@ function winner(playerScore, computerScore) {
   if(playerScore > computerScore) {
     console.log(`You have ${playerScore} and computer has ${computerScore}. Congratulations! You are the winner`)
   } else if(playerScore < computerScore) {
-    console.log(`Sorry, you lost. You have ${playerScore} wins and computer has ${computerScore} wins. More luck next time!`);
+    console.log(`Sorry, you lost. You have ${playerScore} and computer has ${computerScore}. More luck next time!`);
   } else {
-    console.log(`The result is a tie! You have ${playerScore} wins and computer has ${computerScore} wins.`);
+    console.log(`The result is a tie! You have ${playerScore} and computer has ${computerScore}.`);
   }
 }
 
