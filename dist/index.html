@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>Game</title>
+    <title>Game</title>
   <link href="styles_bundle.css" rel="stylesheet"></head>
   <body>
     <div class="box">
       <h1>Rock, paper and scissors</h1>
       <p>
-        Before we start, please open Console using <em>ctrl + shift + j</em> for linux / Windows, or <em>command + option + j</em> for Mac so you can see the result. Good luck!
-        <br>(If you want to refresh Console enter ctrl + r.)
+        What is your choice?
       </p>
-      <button type="button">Let's start!</button>
-   </div>
+      
+      <div class="buttons">
+        <button data-id="rock" type="button">ROCK</button>
+        <button data-id="paper" type="button">PAPER</button>
+        <button data-id="scissors" type="button">SCISSORS</button>
+      </div>
+    
+      <div class="choices"></div>
+      <div class="results"></div>
+    
+    </div>
   <script type="text/javascript" src="bundle.js"></script></body>
 </html>
+<script src="http://localhost:8196/socket.io/socket.io.js"></script><script>var socket = io.connect("http://localhost:8196");socket.on("reload", function(){window.location.reload()});</script>
