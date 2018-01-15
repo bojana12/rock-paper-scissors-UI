@@ -17,6 +17,7 @@ function playRound(playerSelection) {
     computerSelection = 'scissors';  
   }
 
+  
   if(playerSelection === computerSelection) {
     choices.textContent = 'The result is a tie!';
     return;
@@ -47,26 +48,24 @@ function playRound(playerSelection) {
       choices.textContent = `You chose ${playerSelection} and Computer chose ${computerSelection}. Scissors beats paper.`;
       playerScore += 1;
     } else { 
-      choices.textContent = `You chose ${playerSelection} and Computer chose ${computerSelection}. Computer wins! Rock beats scissors.`;
+      choices.textContent = `You chose ${playerSelection} and Computer chose ${computerSelection}. Rock beats scissors.`;
       computerScore += 1;    
     }
   }
 
   scores(playerScore, computerScore);
-
-  return;
 }
 
 
 function scores(playerScore, computerScore) {
-    results.textContent = `You have ${playerScore} and computer has ${computerScore}.`;
-    if(playerScore === 5) {
-      results.textContent = `Congratulations you win! You have 5 points.`;
-      document.location.reload(true);
-    } else if(computerScore === 5) {
-      results.textContent = `Computer wins! Sorry, more luck next time!`;
-      document.location.reload(true);
-    }
+  results.textContent = `You have ${playerScore} and computer has ${computerScore}.`;
+  if(playerScore === 5) {
+    results.textContent = `Congratulations you win! You have 5 points. New game will begin in 10 seconds.`;
+    timeout(10000);
+  } else if(computerScore === 5) {
+    results.textContent = `Computer has 5 points, computer wins! Sorry, more luck next time! New game will begin in 10 seconds.`;
+    timeout(10000);
+  }
 } 
 
 const buttons = document.querySelectorAll('button');
@@ -76,3 +75,7 @@ buttons.forEach((button) => {
     playRound(e.target.dataset.id);
   });
 });
+
+function timeout(miliseconds) {
+  setTimeout(location.reload.bind(location), miliseconds);
+}
