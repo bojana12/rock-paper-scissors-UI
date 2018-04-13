@@ -10,7 +10,7 @@ h1 {
 }
 
 p {
-  color: #808080;
+  color: #696969;
   font-size: 18px;
   font-family: Helvetica, Arial;
 }
@@ -37,12 +37,12 @@ button:hover {
 }
 
 .results {
+  font-size: 26px;
   margin-top: 15px;
-  color: #808080;
-  
+  color: #8A2BE2;
 }
 
 .choices {
-  color: #808080;
+  color: #696969;
   margin-top: 40px;
 }
